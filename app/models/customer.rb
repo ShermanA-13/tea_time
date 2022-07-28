@@ -3,6 +3,7 @@ class Customer < ApplicationRecord
   has_many :teas, through: :subscriptions
   validates_presence_of :first_name,
                         :last_name,
-                        :email,
                         :address
+
+  validates :email, uniqueness: true, presence: true
 end
