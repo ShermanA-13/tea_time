@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :teas, only: [:create]
 
       resources :customers, only: [:create] do
-        resources :subscriptions, only: [:index]
+        resources :subscriptions, only: %i[index create]
       end
     end
   end
